@@ -1,11 +1,11 @@
 import { render } from '@redwoodjs/testing'
 
-import Header from './Header'
+import ContactPage from './ContactPage'
 
-describe('Header', () => {
+describe('ContactPage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Header />)
+      render(<ContactPage />)
     }).not.toThrow()
   })
 })

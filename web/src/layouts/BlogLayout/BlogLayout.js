@@ -12,6 +12,9 @@ const BlogLayout = ({ children }) => {
             <li>
               <NavLink to={routes.about()}>About</NavLink>
             </li>
+            <li>
+              <NavLink to={routes.contact()}>Contact</NavLink>
+            </li>
           </ul>
         </nav>
       </header>
