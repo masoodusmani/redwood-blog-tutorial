@@ -1,6 +1,8 @@
+import { useAuth } from '@redwoodjs/auth'
 import { NavLink, routes } from '@redwoodjs/router'
 
 const BlogLayout = ({ children }) => {
+  const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
   return (
     <>
       <header>
@@ -15,6 +17,18 @@ const BlogLayout = ({ children }) => {
             <li>
               <NavLink to={routes.contact()}>Contact</NavLink>
             </li>
+            <li>
+              {isAuthenticated ? (
+                <a href="#" onClick={logOut}>
+                  Log out
+                </a>
+              ) : (
+                <a href="#" onClick={logIn}>
+                  Log in
+                </a>
+              )}
+            </li>
+            {isAuthenticated && <li>{currentUser.email}</li>}
           </ul>
         </nav>
       </header>
